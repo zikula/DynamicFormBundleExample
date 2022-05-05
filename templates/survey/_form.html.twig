@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+    {{ form_row(form.name) }}
+<hr>
+    {{ form_label(form.questions) }}
+    {# store the prototype on the data-prototype attribute #}
+    <ul id="dynamic-fields-list"
+        data-prototype="{{ form_widget(form.questions.vars.prototype)|e }}"
+        data-widget-tags="{{ '<li></li>'|e }}"
+        data-widget-counter="{{ form.questions|length }}">
+        {% for questionField in form.questions %}
+            <li>
+                {{ form_errors(questionField) }}
+                {{ form_widget(questionField) }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button type="button" class="add-another-collection-widget" data-list-selector="#dynamic-fields-list">Add another</button>
+
+<hr>
+{{ form_end(form) }}

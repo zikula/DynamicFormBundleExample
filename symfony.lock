@@ -229,9 +229,6 @@
     "symfony/cache": {
         "version": "v5.4.7"
     },
-    "symfony/cache-contracts": {
-        "version": "v2.5.1"
-    },
     "symfony/config": {
         "version": "v5.4.7"
     },
@@ -246,6 +243,9 @@
         "files": [
             "bin/console"
         ]
+    },
+    "symfony/contracts": {
+        "version": "v2.5.1"
     },
     "symfony/css-selector": {
         "version": "v5.4.3"
@@ -265,9 +265,6 @@
     "symfony/dependency-injection": {
         "version": "v5.4.7"
     },
-    "symfony/deprecation-contracts": {
-        "version": "v3.0.1"
-    },
     "symfony/doctrine-bridge": {
         "version": "v5.4.7"
     },
@@ -282,9 +279,6 @@
     },
     "symfony/event-dispatcher": {
         "version": "v5.4.3"
-    },
-    "symfony/event-dispatcher-contracts": {
-        "version": "v3.0.1"
     },
     "symfony/expression-language": {
         "version": "v5.4.7"
@@ -331,9 +325,6 @@
     },
     "symfony/http-client": {
         "version": "v5.4.7"
-    },
-    "symfony/http-client-contracts": {
-        "version": "v2.5.1"
     },
     "symfony/http-foundation": {
         "version": "v5.4.6"
@@ -495,9 +486,6 @@
     "symfony/serializer": {
         "version": "v5.4.7"
     },
-    "symfony/service-contracts": {
-        "version": "v2.5.1"
-    },
     "symfony/stopwatch": {
         "version": "v5.4.5"
     },
@@ -516,9 +504,6 @@
             "config/packages/translation.yaml",
             "translations/.gitignore"
         ]
-    },
-    "symfony/translation-contracts": {
-        "version": "v2.5.1"
     },
     "symfony/twig-bridge": {
         "version": "v5.4.7"
@@ -584,5 +569,8 @@
     },
     "webmozart/assert": {
         "version": "1.10.0"
+    },
+    "zikula/dynamic-form-property-bundle": {
+        "version": "dev-main"
     }
 }
