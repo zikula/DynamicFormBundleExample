@@ -8,4 +8,23 @@
 
     {{ form(form) }}
 
+    <h2>Survey responses</h2>
+    <table border="1">
+        <thead>
+            <th>email</th>{# you are responsible for your own non-dynamic fields #}
+        {% for key in survey.keys %}
+            <th>{{ key }}</th>
+        {% endfor %}
+        </thead>
+        <tbody>
+        {% for response in survey.responses %}
+            <tr>
+                <td>{{ response.email }}</td>{# you are responsible for your own non-dynamic fields #}
+                {% for key in survey.keys %}
+                    <td>{{ attribute(response, key) }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

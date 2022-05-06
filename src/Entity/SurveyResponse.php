@@ -12,33 +12,33 @@ class SurveyResponse extends AbstractDynamicPropertyDataEntity
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    private int $id;
 
     #[ORM\ManyToOne(targetEntity: Survey::class, inversedBy: 'responses')]
     #[ORM\JoinColumn(nullable: false)]
-    private $survey;
+    private Survey $survey;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $email;
+    private string $email;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSurvey(): ?Survey
+    public function getSurvey(): Survey
     {
         return $this->survey;
     }
 
-    public function setSurvey(?Survey $survey): self
+    public function setSurvey(Survey $survey): self
     {
         $this->survey = $survey;
 
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }

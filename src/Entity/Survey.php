@@ -7,7 +7,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertiesContainerInterface;
-use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertyInterface;
 
 #[ORM\Entity(repositoryClass: SurveyRepository::class)]
 class Survey implements DynamicPropertiesContainerInterface
@@ -24,7 +23,7 @@ class Survey implements DynamicPropertiesContainerInterface
     private string $name;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: SurveyResponse::class, orphanRemoval: true)]
-    private $responses;
+    private Collection $responses;
 
     public function __construct()
     {
@@ -42,9 +41,6 @@ class Survey implements DynamicPropertiesContainerInterface
         return $this->getQuestions()->toArray();
     }
 
-    /**
-     * @return Collection<int, Question>
-     */
     public function getQuestions(): Collection
     {
         return $this->questions;
@@ -85,9 +81,6 @@ class Survey implements DynamicPropertiesContainerInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, SurveyResponse>
-     */
     public function getResponses(): Collection
     {
         return $this->responses;
@@ -113,5 +106,15 @@ class Survey implements DynamicPropertiesContainerInterface
         }
 
         return $this;
+    }
+
+    public function getKeys(): array
+    {
+        $keys = [];
+        foreach ($this->getDynamicFieldsSpecification() as $specification) {
+            $keys[] = $specification->getName();
+        }
+
+        return $keys;
     }
 }

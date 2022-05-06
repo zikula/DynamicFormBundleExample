@@ -31,7 +31,7 @@ class SurveyController extends AbstractController
         $form = $this->createForm(SurveyType::class, $survey);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid() && $form->get('submit')->isClicked()) {
+        if (!$request->isXmlHttpRequest() && $form->isSubmitted() && $form->isValid() && $form->get('submit')->isClicked()) {
             $managerRegistry->getManager()->persist($survey);
             $managerRegistry->getManager()->flush();
 
@@ -50,7 +50,7 @@ class SurveyController extends AbstractController
         $surveyResponse = new SurveyResponse();
         $surveyResponse->setSurvey($survey);
         $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'survey' => $survey
+            'dynamicFieldsContainer' => $survey
         ]);
         $form->handleRequest($request);
 
