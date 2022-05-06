@@ -7,6 +7,7 @@ use App\Repository\QuestionRepository;
 use App\Repository\SurveyRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertiesContainerInterface;
@@ -22,6 +23,7 @@ class SurveyResponseType extends AbstractType
                 'dynamicFieldsContainer' => $options['survey'],
                 'inherit_data' => true
             ])
+            ->add('submit', SubmitType::class)
         ;
     }
 

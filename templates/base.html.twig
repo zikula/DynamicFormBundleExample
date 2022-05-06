@@ -16,6 +16,9 @@
         {% endblock %}
     </head>
     <body>
+        {% for flash in app.flashes %}
+            <p>{{ flash[0] }}</p>
+        {% endfor %}
         {% block body %}{% endblock %}
     </body>
 </html>

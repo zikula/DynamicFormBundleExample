@@ -44,7 +44,7 @@ class SurveyController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_survey_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_survey_show', methods: ['GET', 'POST'])]
     public function show(Request $request, Survey $survey, ManagerRegistry $managerRegistry): Response
     {
         $surveyResponse = new SurveyResponse();
@@ -63,7 +63,7 @@ class SurveyController extends AbstractController
         }
         return $this->render('survey/show.html.twig', [
             'survey' => $survey,
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 
