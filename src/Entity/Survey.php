@@ -6,6 +6,7 @@ use App\Repository\SurveyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertiesContainerInterface;
 
 #[ORM\Entity(repositoryClass: SurveyRepository::class)]
@@ -17,6 +18,7 @@ class Survey implements DynamicPropertiesContainerInterface
     private int $id;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Question::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    #[Assert\Valid]
     private Collection $questions;
 
     #[ORM\Column(type: 'string', length: 255)]
