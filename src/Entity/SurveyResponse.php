@@ -11,15 +11,15 @@ class SurveyResponse extends AbstractDynamicPropertyDataEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    private int $id;
+    #[ORM\Column]
+    private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Survey::class, inversedBy: 'responses')]
+    #[ORM\ManyToOne(inversedBy: 'responses')]
     #[ORM\JoinColumn(nullable: false)]
-    private Survey $survey;
+    private ?Survey $survey = null;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private string $email;
+    #[ORM\Column]
+    private ?string $email = null;
 
     public function getId(): ?int
     {

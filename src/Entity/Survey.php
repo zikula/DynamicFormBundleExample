@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\SurveyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertiesContainerInterface;
@@ -14,14 +15,14 @@ class Survey implements DynamicPropertiesContainerInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    private int $id;
+    #[ORM\Column]
+    private ?int $id = null;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Question::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     #[Assert\Valid]
     private Collection $questions;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column]
     private string $name;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: SurveyResponse::class, orphanRemoval: true)]
@@ -40,7 +41,12 @@ class Survey implements DynamicPropertiesContainerInterface
 
     public function getDynamicFieldsSpecification(array $params = []): array
     {
-        return $this->getQuestions()->toArray();
+        $expressionBuilder = Criteria::expr();
+        $criteria = new Criteria();
+        $criteria->where($expressionBuilder->eq('active', true));
+        $criteria->orderBy(['weight' => Criteria::ASC, 'name' => Criteria::ASC]);
+
+        return $this->getQuestions()->matching($criteria)->toArray();
     }
 
     public function getQuestions(): Collection

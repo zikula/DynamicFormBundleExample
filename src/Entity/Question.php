@@ -12,11 +12,11 @@ class Question extends AbstractDynamicPropertyEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    protected int $id;
+    #[ORM\Column]
+    protected ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Survey::class, inversedBy: 'questions')]
-    protected Survey $survey;
+    #[ORM\ManyToOne(inversedBy: 'questions')]
+    protected ?Survey $survey = null;
 
     public function __construct()
     {
@@ -33,7 +33,7 @@ class Question extends AbstractDynamicPropertyEntity
         return $this->survey;
     }
 
-    public function setSurvey(Survey $survey): void
+    public function setSurvey(?Survey $survey): void
     {
         $this->survey = $survey;
     }
