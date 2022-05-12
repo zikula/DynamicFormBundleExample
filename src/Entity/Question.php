@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\QuestionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Zikula\Bundle\DynamicFormPropertyBundle\Entity\AbstractDynamicPropertyEntity;
 
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
@@ -17,11 +16,6 @@ class Question extends AbstractDynamicPropertyEntity
 
     #[ORM\ManyToOne(inversedBy: 'questions')]
     protected ?Survey $survey = null;
-
-    public function __construct()
-    {
-        $this->formType = TextType::class;
-    }
 
     public function getId(): ?int
     {
