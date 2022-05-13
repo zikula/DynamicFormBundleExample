@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <style>
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    </style>
+{% endblock%}
+
 {% block title %}Survey{% endblock %}
 
 {% block body %}
@@ -9,18 +18,18 @@
     {{ form(form) }}
 
     <h2>Survey responses</h2>
-    <table border="1">
+    <table>
         <thead>
-            <th>email</th>{# you are responsible for your own non-dynamic fields #}
-        {% for key in survey.keys %}
-            <th>{{ key }}</th>
-        {% endfor %}
+            <th>Email</th>{# you are responsible for your own non-dynamic fields #}
+            {% for key, label in survey.labels %}
+                <th>{{ label }}</th>
+            {% endfor %}
         </thead>
         <tbody>
         {% for response in survey.responses %}
             <tr>
                 <td>{{ response.email }}</td>{# you are responsible for your own non-dynamic fields #}
-                {% for key in survey.keys %}
+                {% for key, label in survey.labels %}
                     <td>{{ attribute(response, key) }}</td>
                 {% endfor %}
             </tr>

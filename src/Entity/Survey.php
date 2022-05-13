@@ -19,6 +19,7 @@ class Survey implements DynamicPropertiesContainerInterface
     private ?int $id = null;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: Question::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    #[ORM\OrderBy(['id' => 'ASC'])]
     #[Assert\Valid]
     private Collection $questions;
 
@@ -26,6 +27,7 @@ class Survey implements DynamicPropertiesContainerInterface
     private string $name;
 
     #[ORM\OneToMany(mappedBy: 'survey', targetEntity: SurveyResponse::class, orphanRemoval: true)]
+    #[Assert\Valid]
     private Collection $responses;
 
     public function __construct()
@@ -116,13 +118,13 @@ class Survey implements DynamicPropertiesContainerInterface
         return $this;
     }
 
-    public function getKeys(): array
+    public function getLabels(): array
     {
-        $keys = [];
+        $labels = [];
         foreach ($this->getDynamicFieldsSpecification() as $specification) {
-            $keys[] = $specification->getName();
+            $labels[$specification->getName()] = $specification->getLabel();
         }
 
-        return $keys;
+        return $labels;
     }
 }
