@@ -5,6 +5,7 @@
     table, th, td {
         border: 1px solid;
         border-collapse: collapse;
+        padding: 4px;
     }
     </style>
 {% endblock%}
@@ -30,7 +31,7 @@
             <tr>
                 <td>{{ response.email }}</td>{# you are responsible for your own non-dynamic fields #}
                 {% for key, label in survey.labels %}
-                    <td>{{ attribute(response, key) }}</td>
+                    <td>{{ attribute(response, key)|default }}</td>
                 {% endfor %}
             </tr>
         {% endfor %}
