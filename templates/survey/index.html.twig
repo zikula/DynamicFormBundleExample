@@ -1,5 +1,15 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 4px;
+        }
+    </style>
+{% endblock%}
+
 {% block title %}Survey index{% endblock %}
 
 {% block body %}
@@ -21,6 +31,7 @@
                 <td>
                     <a href="{{ path('app_survey_show', {'id': survey.id}) }}">show</a>
                     <a href="{{ path('app_survey_edit', {'id': survey.id}) }}">edit</a>
+                    <a href="{{ path('app_survey_respond', {'id': survey.id}) }}">respond</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +42,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_survey_new') }}">Create new</a>
+    <a href="{{ path('app_survey_new') }}">Create new Survey</a>
 {% endblock %}

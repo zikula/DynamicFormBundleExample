@@ -16,8 +16,6 @@
     <h1>Survey #{{ survey.id }}</h1>
     <a href="{{ path('app_survey_index') }}">back to list</a>
 
-    {{ form(form) }}
-
     <h2>Survey responses</h2>
     <table>
         <thead>
@@ -25,6 +23,7 @@
             {% for key, label in survey.labels %}
                 <th>{{ label }}</th>
             {% endfor %}
+            <th>View</th>
         </thead>
         <tbody>
         {% for response in survey.responses %}
@@ -33,6 +32,7 @@
                 {% for key, label in survey.labels %}
                     <td>{{ attribute(response, key)|default }}</td>
                 {% endfor %}
+                <td><a href="{{ path('app_survey_response_view', {id: response.id})}}">view</a></td>
             </tr>
         {% endfor %}
         </tbody>

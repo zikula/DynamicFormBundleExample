@@ -44,26 +44,11 @@ class SurveyController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_survey_show', methods: ['GET', 'POST'])]
-    public function show(Request $request, Survey $survey, ManagerRegistry $managerRegistry): Response
+    #[Route('/{id}', name: 'app_survey_show', methods: ['GET'])]
+    public function show(Request $request, Survey $survey): Response
     {
-        $surveyResponse = new SurveyResponse();
-        $surveyResponse->setSurvey($survey);
-        $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'dynamicFieldsContainer' => $survey
-        ]);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $managerRegistry->getManager()->persist($surveyResponse);
-            $managerRegistry->getManager()->flush();
-            $this->addFlash('success', 'Thank you for completing the survey!');
-
-            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
-        }
         return $this->render('survey/show.html.twig', [
             'survey' => $survey,
-            'form' => $form->createView(),
         ]);
     }
 
@@ -94,5 +79,36 @@ class SurveyController extends AbstractController
         }
 
         return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/respond/{id}', name: 'app_survey_respond', methods: ['GET', 'POST'])]
+    public function respond(Request $request, Survey $survey, ManagerRegistry $managerRegistry): Response
+    {
+        $surveyResponse = new SurveyResponse();
+        $surveyResponse->setSurvey($survey);
+        $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
+            'dynamicFieldsContainer' => $survey
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $managerRegistry->getManager()->persist($surveyResponse);
+            $managerRegistry->getManager()->flush();
+            $this->addFlash('success', 'Thank you for completing the survey!');
+
+            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+        }
+        return $this->render('survey/respond.html.twig', [
+            'survey' => $survey,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/response/{id}', name: 'app_survey_response_view', methods: ['GET'])]
+    public function showResponse(SurveyResponse $surveyResponse): Response
+    {
+        return $this->render('survey/show_response.html.twig', [
+            'surveyResponse' => $surveyResponse,
+        ]);
     }
 }
