@@ -7310,7 +7310,7 @@
             "dist": {
                 "type": "path",
                 "url": "../DynamicFormPropertyBundle",
-                "reference": "29efb878500ae7877df2064054cc7fdbdd2469e9"
+                "reference": "da93bf360158d93be1f3d8ab78a99740854e833e"
             },
             "require": {
                 "doctrine/orm": "^2.11",
