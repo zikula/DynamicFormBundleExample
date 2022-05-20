@@ -4,10 +4,10 @@ namespace App\Entity;
 
 use App\Repository\SurveyResponseRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Zikula\Bundle\DynamicFormPropertyBundle\Entity\AbstractDynamicPropertyDataEntity;
+use Zikula\Bundle\DynamicFormPropertyBundle\Entity\AbstractDynamicPropertyData;
 
 #[ORM\Entity(repositoryClass: SurveyResponseRepository::class)]
-class SurveyResponse extends AbstractDynamicPropertyDataEntity
+class SurveyResponse extends AbstractDynamicPropertyData
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

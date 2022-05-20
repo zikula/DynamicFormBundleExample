@@ -10,10 +10,10 @@
     </style>
 {% endblock%}
 
-{% block title %}Survey{% endblock %}
+{% block title %}Survey {{ survey.name }} (#{{ survey.id }}){% endblock %}
 
 {% block body %}
-    <h1>Survey #{{ survey.id }}</h1>
+    <h1>Survey {{ survey.name }} (#{{ survey.id }})</h1>
     <a href="{{ path('app_survey_index') }}">back to list</a>
 
     <h2>Survey responses</h2>

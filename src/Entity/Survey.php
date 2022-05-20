@@ -41,7 +41,7 @@ class Survey implements DynamicPropertiesContainerInterface
         return $this->id;
     }
 
-    public function getDynamicFieldsSpecification(array $params = []): array
+    public function getPropertySpecifications(array $params = []): array
     {
         $expressionBuilder = Criteria::expr();
         $criteria = new Criteria();
@@ -121,7 +121,7 @@ class Survey implements DynamicPropertiesContainerInterface
     public function getLabels(): array
     {
         $labels = [];
-        foreach ($this->getDynamicFieldsSpecification() as $specification) {
+        foreach ($this->getPropertySpecifications() as $specification) {
             $labels[$specification->getName()] = $specification->getLabel();
         }
 

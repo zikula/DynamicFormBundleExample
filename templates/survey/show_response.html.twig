@@ -10,10 +10,10 @@
     </style>
 {% endblock%}
 
-{% block title %}Survey {{ surveyResponse.survey.name }}{% endblock %}
+{% block title %}Survey {{ surveyResponse.survey.name }} (#{{ surveyResponse.survey.id }}){% endblock %}
 
 {% block body %}
-    <h1>Survey {{ surveyResponse.survey.name }}</h1>
+    <h1>Survey {{ surveyResponse.survey.name }} (#{{ surveyResponse.survey.id }})</h1>
     <a href="{{ path('app_survey_show', { id:surveyResponse.survey.id }) }}">back to survey</a>
 
     <table>
