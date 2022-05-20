@@ -77,7 +77,7 @@
         }
     },
     "repositories": [
-        {"type": "path", "url": "/Users/craig/Documents/_Work/DynamicFormPropertyBundle"}
+        {"type": "path", "url": "../DynamicFormPropertyBundle"}
     ],
     "replace": {
         "symfony/polyfill-ctype": "*",
