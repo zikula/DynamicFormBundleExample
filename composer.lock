@@ -7310,7 +7310,7 @@
             "dist": {
                 "type": "path",
                 "url": "../DynamicFormPropertyBundle",
-                "reference": "0e10f6c1c253893907555707572aa3f487993d9b"
+                "reference": "29efb878500ae7877df2064054cc7fdbdd2469e9"
             },
             "require": {
                 "doctrine/orm": "^2.11",
@@ -7351,7 +7351,7 @@
                     "email": "info@guite.de"
                 }
             ],
-            "description": "An bundle providing dynamic properties to symfony forms.",
+            "description": "A Symfony bundle providing dynamic properties to Symfony forms.",
             "homepage": "https://ziku.la",
             "transport-options": {
                 "relative": true
