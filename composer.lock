@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b78efe3ea1813c9f9500af7e8dfd4668",
+    "content-hash": "cc5d89cda509a16756c20559815ffb2c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -7307,10 +7307,16 @@
         {
             "name": "zikula/dynamic-form-property-bundle",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../DynamicFormPropertyBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zikula/DynamicFormPropertyBundle.git",
                 "reference": "6487c367ad8d5a9cf35514e72a0dd623f646d8d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zikula/DynamicFormPropertyBundle/zipball/6487c367ad8d5a9cf35514e72a0dd623f646d8d3",
+                "reference": "6487c367ad8d5a9cf35514e72a0dd623f646d8d3",
+                "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.11",
@@ -7327,17 +7333,14 @@
                 "phpunit/phpunit": "^9.5",
                 "roave/security-advisories": "dev-latest"
             },
+            "default-branch": true,
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
                     "Zikula\\Bundle\\DynamicFormPropertyBundle\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Zikula\\Bundle\\DynamicFormPropertyBundle\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7353,9 +7356,11 @@
             ],
             "description": "A Symfony bundle providing dynamic properties to Symfony forms.",
             "homepage": "https://ziku.la",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/zikula/DynamicFormPropertyBundle/issues",
+                "source": "https://github.com/zikula/DynamicFormPropertyBundle/tree/main"
+            },
+            "time": "2022-05-20T18:18:26+00:00"
         }
     ],
     "packages-dev": [

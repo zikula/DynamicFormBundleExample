@@ -76,9 +76,6 @@
             "App\\Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {"type": "path", "url": "../DynamicFormPropertyBundle"}
-    ],
     "replace": {
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
