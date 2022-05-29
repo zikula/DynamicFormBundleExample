@@ -23,7 +23,7 @@
             {% for key, label in survey.labels %}
                 <th>{{ label }}</th>
             {% endfor %}
-            <th>View</th>
+            <th>Actions</th>
         </thead>
         <tbody>
         {% for response in survey.responses %}
@@ -32,7 +32,10 @@
                 {% for key, label in survey.labels %}
                     <td>{{ attribute(response, key)|default }}</td>
                 {% endfor %}
-                <td><a href="{{ path('app_survey_response_view', {id: response.id})}}">view</a></td>
+                <td>
+                    <a href="{{ path('app_survey_response_view', {id: response.id})}}">view</a>
+                    <a href="{{ path('app_survey_response_edit', {id: response.id})}}">edit</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

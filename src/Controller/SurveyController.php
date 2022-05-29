@@ -111,4 +111,25 @@ class SurveyController extends AbstractController
             'surveyResponse' => $surveyResponse,
         ]);
     }
+
+    #[Route('/response/{id}/edit', name: 'app_survey_response_edit', methods: ['GET', 'POST'])]
+    public function editResponse(Request $request, SurveyResponse $surveyResponse, ManagerRegistry $managerRegistry): Response
+    {
+        $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
+            'dynamicFieldsContainer' => $surveyResponse->getSurvey()
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $managerRegistry->getManager()->persist($surveyResponse);
+            $managerRegistry->getManager()->flush();
+            $this->addFlash('success', 'The survey response was edited!');
+
+            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
+        }
+        return $this->render('survey/respond.html.twig', [
+            'survey' => $surveyResponse->getSurvey(),
+            'form' => $form->createView(),
+        ]);
+    }
 }
