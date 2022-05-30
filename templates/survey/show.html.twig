@@ -33,7 +33,7 @@
                     <td>{{ attribute(response, key)|default }}</td>
                 {% endfor %}
                 <td>
-                    <a href="{{ path('app_survey_response_view', {id: response.id})}}">view</a>
+                    <a href="{{ path('app_survey_response_show', {id: response.id})}}">view</a>
                     <a href="{{ path('app_survey_response_edit', {id: response.id})}}">edit</a>
                 </td>
             </tr>

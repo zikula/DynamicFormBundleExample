@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SurveyResponse index{% endblock %}
+
+{% block body %}
+    <h1>SurveyResponse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Data</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for survey_response in survey_responses %}
+            <tr>
+                <td>{{ survey_response.id }}</td>
+                <td>{{ survey_response.email }}</td>
+                <td>{{ survey_response.data ? survey_response.data|json_encode : '' }}</td>
+                <td>
+                    <a href="{{ path('app_survey_response_show', {'id': survey_response.id}) }}">show</a>
+                    <a href="{{ path('app_survey_response_edit', {'id': survey_response.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_survey_response_new') }}">Create new</a>
+{% endblock %}

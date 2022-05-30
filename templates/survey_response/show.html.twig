@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 4px;
+        }
+    </style>
+{% endblock%}
+
+{% block title %}Survey {{ survey_response.survey.name }} (#{{ survey_response.survey.id }}){% endblock %}
+
+{% block body %}
+    <h1>Survey {{ survey_response.survey.name }} (#{{ survey_response.survey.id }})</h1>
+    <a href="{{ path('app_survey_show', { id:survey_response.survey.id }) }}">back to survey</a>
+
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>Value</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Email</td>
+            <td>{{ survey_response.email }}</td>{# you are responsible for your own non-dynamic fields #}
+        </tr>
+        {% for key, label in survey_response.survey.labels %}
+            <tr>
+                <td>{{ label }}</td>
+                <td>{{ attribute(survey_response, key)|default }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

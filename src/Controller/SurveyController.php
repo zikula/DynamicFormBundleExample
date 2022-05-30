@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Survey;
-use App\Entity\SurveyResponse;
-use App\Form\SurveyResponseType;
 use App\Form\SurveyType;
 use App\Repository\SurveyRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -79,57 +77,5 @@ class SurveyController extends AbstractController
         }
 
         return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-    #[Route('/respond/{id}', name: 'app_survey_respond', methods: ['GET', 'POST'])]
-    public function respond(Request $request, Survey $survey, ManagerRegistry $managerRegistry): Response
-    {
-        $surveyResponse = new SurveyResponse();
-        $surveyResponse->setSurvey($survey);
-        $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'dynamicFieldsContainer' => $survey
-        ]);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $managerRegistry->getManager()->persist($surveyResponse);
-            $managerRegistry->getManager()->flush();
-            $this->addFlash('success', 'Thank you for completing the survey!');
-
-            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
-        }
-        return $this->render('survey/respond.html.twig', [
-            'survey' => $survey,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    #[Route('/response/{id}', name: 'app_survey_response_view', methods: ['GET'])]
-    public function showResponse(SurveyResponse $surveyResponse): Response
-    {
-        return $this->render('survey/show_response.html.twig', [
-            'surveyResponse' => $surveyResponse,
-        ]);
-    }
-
-    #[Route('/response/{id}/edit', name: 'app_survey_response_edit', methods: ['GET', 'POST'])]
-    public function editResponse(Request $request, SurveyResponse $surveyResponse, ManagerRegistry $managerRegistry): Response
-    {
-        $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'dynamicFieldsContainer' => $surveyResponse->getSurvey()
-        ]);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $managerRegistry->getManager()->persist($surveyResponse);
-            $managerRegistry->getManager()->flush();
-            $this->addFlash('success', 'The survey response was edited!');
-
-            return $this->redirectToRoute('app_survey_index', [], Response::HTTP_SEE_OTHER);
-        }
-        return $this->render('survey/respond.html.twig', [
-            'survey' => $surveyResponse->getSurvey(),
-            'form' => $form->createView(),
-        ]);
     }
 }

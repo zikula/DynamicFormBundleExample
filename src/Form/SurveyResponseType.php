@@ -19,7 +19,6 @@ class SurveyResponseType extends AbstractType
             ->add('survey', InlineFormDefinitionType::class, [
                 'dynamicFieldsContainer' => $options['dynamicFieldsContainer'],
             ])
-            ->add('submit', SubmitType::class)
         ;
     }
 
