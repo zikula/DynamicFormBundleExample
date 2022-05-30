@@ -7304,12 +7304,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zikula/DynamicFormPropertyBundle.git",
-                "reference": "39f6951aae9767bb63c14f278da045fe6343d36d"
+                "reference": "59a5495de7feaf4512dac2ca5350c5c68c29bd4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zikula/DynamicFormPropertyBundle/zipball/39f6951aae9767bb63c14f278da045fe6343d36d",
-                "reference": "39f6951aae9767bb63c14f278da045fe6343d36d",
+                "url": "https://api.github.com/repos/zikula/DynamicFormPropertyBundle/zipball/59a5495de7feaf4512dac2ca5350c5c68c29bd4a",
+                "reference": "59a5495de7feaf4512dac2ca5350c5c68c29bd4a",
                 "shasum": ""
             },
             "require": {
@@ -7361,7 +7361,7 @@
                 "issues": "https://github.com/zikula/DynamicFormPropertyBundle/issues",
                 "source": "https://github.com/zikula/DynamicFormPropertyBundle/tree/main"
             },
-            "time": "2022-05-29T21:32:34+00:00"
+            "time": "2022-05-30T13:04:04+00:00"
         }
     ],
     "packages-dev": [

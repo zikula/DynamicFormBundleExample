@@ -46,7 +46,6 @@ class Survey implements DynamicPropertiesContainerInterface
         $expressionBuilder = Criteria::expr();
         $criteria = new Criteria();
         $criteria->where($expressionBuilder->eq('active', true));
-        $criteria->orderBy(['weight' => Criteria::ASC, 'name' => Criteria::ASC]);
 
         return $this->getQuestions()->matching($criteria)->toArray();
     }
