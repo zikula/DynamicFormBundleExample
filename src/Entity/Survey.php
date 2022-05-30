@@ -8,10 +8,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Zikula\Bundle\DynamicFormPropertyBundle\DynamicPropertiesContainerInterface;
+use Zikula\Bundle\DynamicFormPropertyBundle\Entity\AbstractDynamicPropertiesContainer;
 
 #[ORM\Entity(repositoryClass: SurveyRepository::class)]
-class Survey implements DynamicPropertiesContainerInterface
+class Survey extends AbstractDynamicPropertiesContainer
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -115,15 +115,5 @@ class Survey implements DynamicPropertiesContainerInterface
         }
 
         return $this;
-    }
-
-    public function getLabels(): array
-    {
-        $labels = [];
-        foreach ($this->getPropertySpecifications() as $specification) {
-            $labels[$specification->getName()] = $specification->getLabel();
-        }
-
-        return $labels;
     }
 }
