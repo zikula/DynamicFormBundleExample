@@ -1,4 +1,17 @@
+{#{{ form_start(form) }}#}
+{#    {{ form_widget(form) }}#}
+{#    <button class="btn">{{ button_label|default('Save') }}</button>#}
+{#{{ form_end(form) }}#}
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_row(form.email) }}
+{% for groupLabel, nameAndLabel in survey.groupedLabels %}
+    <fieldset style="border:1px solid black;">
+        <legend>{{ groupLabel }}</legend>
+        {% for name, label in nameAndLabel %}
+            {{ form_row(form.survey[name]) }}
+        {% endfor %}
+    </fieldset>
+{% endfor %}
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
