@@ -26,11 +26,20 @@
             <td>Email</td>
             <td>{{ survey_response.email }}</td>{# you are responsible for your own non-dynamic fields #}
         </tr>
-        {% for key, label in survey_response.survey.labels %}
-            <tr>
-                <td>{{ label }}</td>
-                <td>{{ attribute(survey_response, key)|default }}</td>
-            </tr>
+{#        {% for key, label in survey_response.survey.labels %}#}
+{#            <tr>#}
+{#                <td>{{ label }}</td>#}
+{#                <td>{{ attribute(survey_response, key)|default }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+        {% for groupLabel, nameAndLabel in survey_response.survey.groupedLabels %}
+            <tr><td colspan="2"><strong>{{ groupLabel }}</strong></td></tr>
+            {% for name, label in nameAndLabel %}
+                <tr>
+                    <td>{{ label }}</td>
+                    <td>{{ attribute(survey_response, name)|default }}</td>
+                </tr>
+            {% endfor %}
         {% endfor %}
         </tbody>
     </table>

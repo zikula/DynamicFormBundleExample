@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Zikula\Bundle\DynamicFormBundle\Form\Type\InlineFormDefinitionType;
+use Zikula\Bundle\DynamicFormBundle\Form\Type\DynamicFieldsType;
 
 class SurveyResponseType extends AbstractType
 {
@@ -15,7 +15,7 @@ class SurveyResponseType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
-            ->add('survey', InlineFormDefinitionType::class, [
+            ->add('survey', DynamicFieldsType::class, [
                 'specificationContainer' => $options['specificationContainer'],
             ])
         ;
