@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc5d89cda509a16756c20559815ffb2c",
+    "content-hash": "8c5b35ef64122be40be20aaa7e2c5870",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -7299,17 +7299,17 @@
             "time": "2022-06-03T18:03:27+00:00"
         },
         {
-            "name": "zikula/dynamic-form-property-bundle",
+            "name": "zikula/dynamic-form-bundle",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zikula/DynamicFormPropertyBundle.git",
-                "reference": "4c7e508e75b52b44c43097836129f6738eb355c4"
+                "url": "https://github.com/zikula/DynamicFormBundle.git",
+                "reference": "1373dc43082d72b664067fbb3b1f444e630165fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zikula/DynamicFormPropertyBundle/zipball/4c7e508e75b52b44c43097836129f6738eb355c4",
-                "reference": "4c7e508e75b52b44c43097836129f6738eb355c4",
+                "url": "https://api.github.com/repos/zikula/DynamicFormBundle/zipball/1373dc43082d72b664067fbb3b1f444e630165fb",
+                "reference": "1373dc43082d72b664067fbb3b1f444e630165fb",
                 "shasum": ""
             },
             "require": {
@@ -7340,7 +7340,7 @@
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
-                    "Zikula\\Bundle\\DynamicFormPropertyBundle\\": "src/"
+                    "Zikula\\Bundle\\DynamicFormBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -7357,11 +7357,11 @@
                     "email": "info@guite.de"
                 }
             ],
-            "description": "A Symfony bundle providing dynamic properties to Symfony forms.",
-            "homepage": "https://ziku.la",
+            "description": "A Symfony bundle providing helpers for dynamic forms.",
+            "homepage": "https://github.com/zikula/DynamicFormBundle",
             "support": {
-                "issues": "https://github.com/zikula/DynamicFormPropertyBundle/issues",
-                "source": "https://github.com/zikula/DynamicFormPropertyBundle/tree/main"
+                "issues": "https://github.com/zikula/DynamicFormBundle/issues",
+                "source": "https://github.com/zikula/DynamicFormBundle/tree/main"
             },
             "funding": [
                 {
@@ -7369,7 +7369,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-09T22:37:36+00:00"
+            "time": "2022-06-10T00:35:42+00:00"
         }
     ],
     "packages-dev": [
@@ -9651,7 +9651,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "zikula/dynamic-form-property-bundle": 20
+        "zikula/dynamic-form-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

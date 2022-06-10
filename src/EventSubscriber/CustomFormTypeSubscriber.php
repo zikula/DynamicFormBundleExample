@@ -4,7 +4,7 @@ namespace App\EventSubscriber;
 
 use App\Form\HairColorType;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Zikula\Bundle\DynamicFormPropertyBundle\Event\FormTypeChoiceEvent;
+use Zikula\Bundle\DynamicFormBundle\Event\FormTypeChoiceEvent;
 
 class CustomFormTypeSubscriber implements EventSubscriberInterface
 {

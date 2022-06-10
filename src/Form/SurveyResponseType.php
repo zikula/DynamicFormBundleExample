@@ -5,10 +5,9 @@ namespace App\Form;
 use App\Entity\SurveyResponse;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Zikula\Bundle\DynamicFormPropertyBundle\Form\Type\InlineFormDefinitionType;
+use Zikula\Bundle\DynamicFormBundle\Form\Type\InlineFormDefinitionType;
 
 class SurveyResponseType extends AbstractType
 {

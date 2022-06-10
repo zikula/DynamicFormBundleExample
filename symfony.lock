@@ -570,7 +570,7 @@
     "webmozart/assert": {
         "version": "1.10.0"
     },
-    "zikula/dynamic-form-property-bundle": {
+    "zikula/dynamic-form-bundle": {
         "version": "dev-main"
     }
 }

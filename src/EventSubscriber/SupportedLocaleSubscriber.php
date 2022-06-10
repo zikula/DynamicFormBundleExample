@@ -3,7 +3,7 @@
 namespace App\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Zikula\Bundle\DynamicFormPropertyBundle\Event\SupportedLocalesEvent;
+use Zikula\Bundle\DynamicFormBundle\Event\SupportedLocalesEvent;
 
 class SupportedLocaleSubscriber implements EventSubscriberInterface
 {

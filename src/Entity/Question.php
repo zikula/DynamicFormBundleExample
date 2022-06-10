@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\QuestionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Zikula\Bundle\DynamicFormPropertyBundle\Entity\AbstractDynamicPropertySpecification;
+use Zikula\Bundle\DynamicFormBundle\Entity\AbstractDynamicPropertySpecification;
 
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
 class Question extends AbstractDynamicPropertySpecification

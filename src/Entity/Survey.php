@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Zikula\Bundle\DynamicFormPropertyBundle\Container\AbstractDynamicPropertiesContainer;
+use Zikula\Bundle\DynamicFormBundle\Container\AbstractDynamicPropertiesContainer;
 
 #[ORM\Entity(repositoryClass: SurveyRepository::class)]
 class Survey extends AbstractDynamicPropertiesContainer

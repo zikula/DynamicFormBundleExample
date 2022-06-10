@@ -1,12 +1,12 @@
 # Proof Of Concept (POC) Application
-### for [zikula/dynamic-form-property-bundle](https://github.com/zikula/DynamicFormPropertyBundle)
+### for [zikula/dynamic-form-bundle](https://github.com/zikula/DynamicFormBundle)
 
 1. `composer install`
 2. `./start.sh`
 
 Stop with `./stop.sh`
 
-This is a _very basic_ Symfony application to show how to use [zikula/dynamic-form-property-bundle](https://github.com/zikula/DynamicFormPropertyBundle).
+This is a _very basic_ Symfony application to show how to use [zikula/dynamic-form-bundle](https://github.com/zikula/DynamicFormBundle).
 
 This POC creates a *SurveyBuilder*. This application allows the site admin to create N surveys and then allows users to
 complete the created surveys and store the responses. Please be advised that this is a _very_ bare-bones application

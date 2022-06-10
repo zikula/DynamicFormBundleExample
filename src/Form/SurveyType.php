@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Zikula\Bundle\DynamicFormPropertyBundle\Form\Type\DynamicFieldCollectionType;
+use Zikula\Bundle\DynamicFormBundle\Form\Type\DynamicFieldCollectionType;
 
 class SurveyType extends AbstractType
 {
