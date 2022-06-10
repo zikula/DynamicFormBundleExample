@@ -16,7 +16,7 @@ class SurveyResponseType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('survey', InlineFormDefinitionType::class, [
-                'dynamicFieldsContainer' => $options['dynamicFieldsContainer'],
+                'specificationContainer' => $options['specificationContainer'],
             ])
         ;
     }
@@ -26,6 +26,6 @@ class SurveyResponseType extends AbstractType
         $resolver->setDefaults([
             'data_class' => SurveyResponse::class,
         ]);
-        $resolver->setRequired('dynamicFieldsContainer');
+        $resolver->setRequired('specificationContainer');
     }
 }

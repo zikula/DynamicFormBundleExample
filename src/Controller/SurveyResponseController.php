@@ -20,7 +20,7 @@ class SurveyResponseController extends AbstractController
         $surveyResponse = new SurveyResponse();
         $surveyResponse->setSurvey($survey);
         $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'dynamicFieldsContainer' => $survey
+            'specificationContainer' => $survey
         ]);
         $form->handleRequest($request);
 
@@ -50,7 +50,7 @@ class SurveyResponseController extends AbstractController
     public function edit(Request $request, SurveyResponse $surveyResponse, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(SurveyResponseType::class, $surveyResponse, [
-            'dynamicFieldsContainer' => $surveyResponse->getSurvey()
+            'specificationContainer' => $surveyResponse->getSurvey()
         ]);
         $form->handleRequest($request);
 

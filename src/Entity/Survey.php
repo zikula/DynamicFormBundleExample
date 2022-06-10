@@ -8,10 +8,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Zikula\Bundle\DynamicFormBundle\Container\AbstractDynamicPropertiesContainer;
+use Zikula\Bundle\DynamicFormBundle\Container\AbstractSpecificationContainer;
 
 #[ORM\Entity(repositoryClass: SurveyRepository::class)]
-class Survey extends AbstractDynamicPropertiesContainer
+class Survey extends AbstractSpecificationContainer
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -41,7 +41,7 @@ class Survey extends AbstractDynamicPropertiesContainer
         return $this->id;
     }
 
-    public function getPropertySpecifications(array $params = []): array
+    public function getFormSpecifications(array $params = []): array
     {
         $expressionBuilder = Criteria::expr();
         $criteria = new Criteria();
