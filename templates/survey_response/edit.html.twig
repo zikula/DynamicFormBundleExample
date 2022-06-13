@@ -6,7 +6,7 @@
     <h1>Survey {{ survey_response.survey.name }} (#{{ survey_response.survey.id }})</h1>
     <a href="{{ path('app_survey_index') }}">back to list</a>
 
-    {{ include('survey_response/_form.html.twig') }}
+    {{ include('survey_response/_form.html.twig', {survey: survey_response.survey}) }}
 
     {{ include('survey_response/_delete_form.html.twig') }}
 

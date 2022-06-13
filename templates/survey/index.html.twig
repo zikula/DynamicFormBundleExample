@@ -1,15 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    <style>
-        table, th, td {
-            border: 1px solid;
-            border-collapse: collapse;
-            padding: 4px;
-        }
-    </style>
-{% endblock%}
-
 {% block title %}Survey index{% endblock %}
 
 {% block body %}
@@ -20,7 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +26,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="2">no records found</td>
+                <td colspan="3">no surveys found</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -45,10 +35,10 @@
     <a href="{{ path('app_survey_new') }}">Create new Survey</a>
 
     <div style="margin-top: 10em;">
-        <span><a href="?XDEBUG_SESSION_START=phpstorm"><i class="fa-solid fa-bug"></i> XDebug session start</a></span>
+        <span><a href="?XDEBUG_SESSION_START=phpstorm">XDebug session start</a></span>
     </div>
     <div>
-        <span><a href="?XDEBUG_SESSION_STOP"><i class="fa-solid fa-bug-slash"></i> XDebug session stop</a></span>
+        <span><a href="?XDEBUG_SESSION_STOP">XDebug session stop</a></span>
     </div>
 
 {% endblock %}

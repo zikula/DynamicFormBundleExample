@@ -1,15 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    <style>
-        table, th, td {
-            border: 1px solid;
-            border-collapse: collapse;
-            padding: 4px;
-        }
-    </style>
-{% endblock%}
-
 {% block title %}Survey {{ survey_response.survey.name }} (#{{ survey_response.survey.id }}){% endblock %}
 
 {% block body %}

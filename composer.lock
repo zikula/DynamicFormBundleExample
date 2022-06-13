@@ -7305,12 +7305,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zikula/DynamicFormBundle.git",
-                "reference": "29613992abe7b63604b5798036704625ab2a9af2"
+                "reference": "40237e884c85cddf3374e06b9dfc034501f0b9a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zikula/DynamicFormBundle/zipball/29613992abe7b63604b5798036704625ab2a9af2",
-                "reference": "29613992abe7b63604b5798036704625ab2a9af2",
+                "url": "https://api.github.com/repos/zikula/DynamicFormBundle/zipball/40237e884c85cddf3374e06b9dfc034501f0b9a7",
+                "reference": "40237e884c85cddf3374e06b9dfc034501f0b9a7",
                 "shasum": ""
             },
             "require": {
@@ -7370,7 +7370,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-10T18:52:10+00:00"
+            "time": "2022-06-13T21:30:00+00:00"
         }
     ],
     "packages-dev": [

@@ -6,7 +6,7 @@
 {{ form_start(form) }}
 {{ form_row(form.email) }}
 {% for groupLabel, nameAndLabel in survey.groupedLabels %}
-    <fieldset style="border:1px solid black;">
+    <fieldset>
         <legend>{{ groupLabel }}</legend>
         {% for name, label in nameAndLabel %}
             {{ form_row(form.survey[name]) }}

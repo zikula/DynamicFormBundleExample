@@ -1,15 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    <style>
-    table, th, td {
-        border: 1px solid;
-        border-collapse: collapse;
-        padding: 4px;
-    }
-    </style>
-{% endblock%}
-
 {% block title %}Survey {{ survey.name }} (#{{ survey.id }}){% endblock %}
 
 {% block body %}
@@ -36,6 +26,10 @@
                     <a href="{{ path('app_survey_response_show', {id: response.id})}}">view</a>
                     <a href="{{ path('app_survey_response_edit', {id: response.id})}}">edit</a>
                 </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="{{ survey.labels|length + 2 }}">no responses found</td>
             </tr>
         {% endfor %}
         </tbody>
