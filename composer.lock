@@ -1857,16 +1857,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.6.2",
+            "version": "1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "76150ae7512439b4e6903db834e4a327596b617d"
+                "reference": "4a07085f74cb1f3fc7103efa537d9f00ebb74ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/76150ae7512439b4e6903db834e4a327596b617d",
-                "reference": "76150ae7512439b4e6903db834e4a327596b617d",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/4a07085f74cb1f3fc7103efa537d9f00ebb74ec7",
+                "reference": "4a07085f74cb1f3fc7103efa537d9f00ebb74ec7",
                 "shasum": ""
             },
             "require": {
@@ -1896,9 +1896,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.6.2"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.6.3"
             },
-            "time": "2022-06-10T09:29:33+00:00"
+            "time": "2022-06-14T11:40:08+00:00"
         },
         {
             "name": "psr/cache",
@@ -7305,12 +7305,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zikula/DynamicFormBundle.git",
-                "reference": "40237e884c85cddf3374e06b9dfc034501f0b9a7"
+                "reference": "04d047196c9568dcf80b4e99c24acd4a6563ac5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zikula/DynamicFormBundle/zipball/40237e884c85cddf3374e06b9dfc034501f0b9a7",
-                "reference": "40237e884c85cddf3374e06b9dfc034501f0b9a7",
+                "url": "https://api.github.com/repos/zikula/DynamicFormBundle/zipball/04d047196c9568dcf80b4e99c24acd4a6563ac5e",
+                "reference": "04d047196c9568dcf80b4e99c24acd4a6563ac5e",
                 "shasum": ""
             },
             "require": {
@@ -7370,7 +7370,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-13T21:30:00+00:00"
+            "time": "2022-06-14T12:39:34+00:00"
         }
     ],
     "packages-dev": [
