@@ -40,8 +40,8 @@
         "symfony/validator": "5.4.*",
         "symfony/web-link": "5.4.*",
         "symfony/yaml": "5.4.*",
-        "twig/extra-bundle": "^3.11.2",
-        "twig/twig": "^3.11.2",
+        "twig/extra-bundle": "3.11.2",
+        "twig/twig": "3.11.2",
         "zikula/dynamic-form-bundle": "^1.0"
     },
     "require-dev": {
